@@ -1,0 +1,8 @@
+:root {
+    --header_font: 'poppins';
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('/public//fonts/poppins/Poppins-Regular.ttf');
+}
