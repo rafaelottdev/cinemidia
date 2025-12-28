@@ -34,15 +34,19 @@
 
 <style>
     .header {
-        /* background-color: red; */
+        width: 100%;
+        height: 80px;
+
+        position: fixed;
+        z-index: 10;
     }
 
     .main_nav {
-
+        height: 100%;
     }
 
     .nav_list {
-        height: 80px;
+        height: 100%;
         padding-top: 10px;
 
         display: flex;
@@ -62,6 +66,8 @@
         letter-spacing: 1px;
 
         border-radius: 10px;
+
+        color: white;
     }
 
     .nav_item > a:hover {

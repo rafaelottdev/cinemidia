@@ -1,8 +1,20 @@
 :root {
     --header_font: 'poppins';
+    --main_title: 'bebas';
+    --info_movie: 'inter';
 }
 
 @font-face {
     font-family: 'poppins';
-    src: url('/public//fonts/poppins/Poppins-Regular.ttf');
+    src: url('/public/fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'bebas';
+    src: url('/public/fonts/bebas_neue/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('/public/fonts/inter/Inter-Regular.otf');
 }
