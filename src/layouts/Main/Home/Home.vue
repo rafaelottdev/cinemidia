@@ -59,11 +59,7 @@
 
 <script setup>
     import { ref, onMounted, computed } from 'vue'
-
-    const API_KEY = "129b3b33196209a2f32976644976b80a"
-    const BASE_URL = "https://api.themoviedb.org/3"
-    const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p"
-    const TMDB_IMAGE_URL_500 = "https://image.tmdb.org/t/p/w500"
+    import { API_KEY, BASE_URL, TMDB_IMAGE_URL, TMDB_IMAGE_URL_500 } from "@/config/tmdb"
 
     const movies = ref([])
     const genres = ref([])
@@ -98,7 +94,7 @@
         return Math.min(movies.value.length, 8) - 1
     })
 
-    const wPoster = 220 + 20 // tamanho do poster + espaçamento entre cada poster
+    const wPoster = 215 + 20 // tamanho do poster + espaçamento entre cada poster
     const posterIndex = ref(0)
 
     function leftClick() {
@@ -129,7 +125,7 @@
     .cover_list {
         display: flex;
 
-        transition: .3s;
+        transition: transform 0.4s ease;
     }
 
     .cover_item {
@@ -150,7 +146,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        filter: brightness(100%);
+        filter: brightness(80%);
     }
 
     .movie_info {
@@ -227,11 +223,11 @@
         justify-content: space-evenly;
         align-items: center;
 
-        transition: .3s;
+       transition: transform 0.4s ease;
     }
 
     .poster_item {
-        width: 220px;
+        width: 215px;
         height: 280px;
 
         border-radius: 20px;
@@ -272,6 +268,8 @@
         justify-content: center;
 
         background-color: rgba(15, 15, 15, .7);
+
+        user-select: none;
     }
 
     .controller:hover {
