@@ -1,7 +1,7 @@
 <template>
    <section class="home_section">
         <div class="cover_list_wrapp">
-            <ul class="cover_list" :style="{transform: `translateX(-${currentIndex * 100}%)`}">
+            <ul class="cover_list" :style="{transform: `translateX(-${currentIndex * 100}vw)`}">
                 <li v-for="movie in movies.slice(0, 8)" :key="movie.id" class="cover_item">
                     <div 
                         class="movie_background" 
