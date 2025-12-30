@@ -2,6 +2,7 @@
     --header_font: 'poppins';
     --main_title: 'bebas';
     --info_movie: 'inter';
+    --release_date_font: 'oswald';
 }
 
 @font-face {
@@ -17,4 +18,9 @@
 @font-face {
     font-family: 'inter';
     src: url('/public/fonts/inter/Inter-Regular.otf');
+}
+
+@font-face {
+    font-family: 'oswald';
+    src: url('/public/fonts/oswald/Oswald-Medium.ttf');
 }
