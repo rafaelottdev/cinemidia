@@ -32,7 +32,7 @@
     import main_logo from "/main-logo.png"
 </script>
 
-<style>
+<style scoped>
     .header {
         width: 100%;
         height: 80px;

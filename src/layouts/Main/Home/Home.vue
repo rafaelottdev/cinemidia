@@ -112,7 +112,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .home_section {
         height: 100vh;
         position: relative;
