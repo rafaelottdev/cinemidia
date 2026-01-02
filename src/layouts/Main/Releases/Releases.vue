@@ -10,7 +10,10 @@
                     <div class="movie_content">
                         <h3>{{ movie.title }}</h3>
 
-                        <p>{{ movie.overview }}</p>
+                        <div>
+                            <p>{{ movie.overview }}</p>
+                            <a href="#">Ver Mais...</a>
+                        </div>
                     </div>
 
                     <div class="movie_meta">
@@ -128,13 +131,13 @@
     }
 
     .movie_info {
-        padding: 25px 0px 0px 0px;
+        padding: 30px 0px 0px 0px;
         font-family: var(--info_movie);
     }
 
     .movie_content {
         padding: 0 20px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
 
     .movie_content > h3 {
@@ -145,8 +148,31 @@
         font-family: var(--main_title);
     }
 
-    .movie_content > p {
+    .movie_content > div {
+        height: 103px;
+
+        position: relative;
+        /* background-color: blue; */
+    }
+
+    .movie_content > div p {
+        height: 66px;
+
+        overflow: hidden;   
         font-size: 13px;
+
+        letter-spacing: .5px;
+    }
+
+    .movie_content > div > a {
+        font-size: 11px;
+        font-family: var(--info_movie);
+        letter-spacing: .5px;
+        text-decoration: underline;
+
+        position: absolute;
+        left: 0;
+        bottom: 23px;
     }
 
     .movie_meta {
