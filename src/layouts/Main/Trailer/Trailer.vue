@@ -50,9 +50,6 @@
 </script>
 
 <style scoped>
-    .trailer_section {
-    }
-
     .trailer_wrapp {
         padding: 100px 0px;
 

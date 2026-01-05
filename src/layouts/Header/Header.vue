@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header :class="{ scrolled: isScrolled }" class="header">
         <nav class="main_nav">
             <ul class="nav_list">
                 <li class="nav_item">
@@ -29,7 +29,22 @@
 </template>
 
 <script setup>
+    import { ref, onMounted, onUnmounted } from "vue"
     import main_logo from "/main-logo.png"
+
+    const isScrolled = ref(false)
+
+    function handleScroll() {
+        isScrolled.value = window.scrollY > 0
+    }
+
+    onMounted(() => {
+        window.addEventListener("scroll", handleScroll)
+    })
+
+    onUnmounted(() => {
+        window.removeEventListener("scroll", handleScroll)
+    })
 </script>
 
 <style scoped>
@@ -39,6 +54,28 @@
 
         position: fixed;
         z-index: 10;
+    }
+
+    .header::after {
+        height: 0%;
+
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        transform-origin: top;
+
+        background-color: rgba(0, 0, 0, 0.87);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        z-index: -1;
+
+        transition: .1s ease;
+    }
+
+    .header.scrolled::after {
+        height: 100%;
     }
 
     .main_nav {
@@ -52,9 +89,6 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-    }
-
-    .nav_item {
     }
 
     .nav_item > a {
