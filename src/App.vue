@@ -1,6 +1,6 @@
 <script setup>
     import HeaderLayout from "./layouts/Header/Header.vue"
-    import MainLayout from "./layouts/Main/MainContent.vue"
+    import MainLayout from "./layouts/Main/MainLayout.vue"
     import FooterLayout from "./layouts/Footer/Footer.vue"
 </script>
 

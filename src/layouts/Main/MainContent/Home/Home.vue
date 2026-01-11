@@ -204,10 +204,6 @@
         fill: yellow;
     }
 
-    /* .genres_list {
-    
-    } */
-
     .poster_list_wrapp {
         padding: 15px 0 15px 15px;
         

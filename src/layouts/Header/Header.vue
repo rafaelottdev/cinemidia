@@ -3,25 +3,25 @@
         <nav class="main_nav">
             <ul class="nav_list">
                 <li class="nav_item">
-                    <a href="#">Filmes</a>
+                    <RouterLink to="/filmes">Filmes</RouterLink>
                 </li>
 
                 <li class="nav_item">
-                    <a href="#">Séries</a>
+                    <RouterLink to="/series">Séries</RouterLink>
                 </li>
 
                 <li class="nav_item">
-                    <a href="#" class="logo">
+                    <RouterLink to="/" class="logo">
                         <img :src="main_logo" alt="Logo principal do site">
-                    </a>
+                    </RouterLink>
                 </li>
 
                 <li class="nav_item">
-                    <a href="#">+Populares</a>
+                    <RouterLink to="populares">+Populares</RouterLink>
                 </li>
 
                 <li class="nav_item">
-                    <a href="#">Watchlist</a>
+                    <RouterLink to="watchlist">Watchlist</RouterLink>
                 </li>
             </ul>
         </nav>
@@ -30,6 +30,7 @@
 
 <script setup>
     import { ref, onMounted, onUnmounted } from "vue"
+    import { RouterLink } from "vue-router"
     import main_logo from "/main-logo.png"
 
     const isScrolled = ref(false)
@@ -51,6 +52,8 @@
     .header {
         width: 100%;
         height: 80px;
+
+        padding: 0px 150px;
 
         position: fixed;
         z-index: 10;
@@ -87,7 +90,7 @@
         padding-top: 10px;
 
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -110,6 +113,10 @@
     }
 
     .logo {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
         display: block;
     }
 
