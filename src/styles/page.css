@@ -42,7 +42,7 @@
     border-radius: 15px;
     overflow: hidden;
 
-    background-color: red;
+    background-color: black;
 }
 
 .page_button:hover > span {
