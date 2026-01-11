@@ -2,9 +2,14 @@
     import HeaderLayout from "./layouts/Header/Header.vue"
     import MainLayout from "./layouts/Main/MainLayout.vue"
     import FooterLayout from "./layouts/Footer/Footer.vue"
+
+    import { isLoading } from '@/config/loading'
+    import GlobalLoading from '@/components/GlobalLoading.vue'
 </script>
 
 <template>
+    <GlobalLoading :show="isLoading" />
+
     <HeaderLayout />
 
     <MainLayout />

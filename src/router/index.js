@@ -6,6 +6,8 @@ import Series from '@/pages/Series/Series.vue'
 import Popular from '@/pages/Popular/Popular.vue'
 import Watchlist from '@/pages/Watchlist/Watchlist.vue'
 
+import { isLoading } from '@/config/loading'
+
 const routes = [
   {
     path: '/',
@@ -37,6 +39,16 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+router.beforeEach(() => {
+  isLoading.value = true
+})
+
+router.afterEach(() => {
+  setTimeout(() => {
+    isLoading.value = false
+  }, 1000)
 })
 
 export default router
