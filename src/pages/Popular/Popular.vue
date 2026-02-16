@@ -97,8 +97,8 @@
 
 <style scoped>
     .popular_section {
-        padding: 80px 0px 50px 0px;
-        background-color: #0F0F0F;
+        padding: 84px 0px 50px 0px;
+        background-color: #281f1f;
     }
 
     .movie_container {
