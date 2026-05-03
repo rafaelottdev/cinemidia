@@ -2,7 +2,8 @@
     <section class="releases_section">
         <div class="releases_container">
             <div v-for="movie in upComingMovies.slice(0, 4)" class="movie_card">
-                <div class="card_image">
+                <div class="card_image" :style="{
+                            backgroundImage: `url(${TMDB_IMAGE_URL}/original${movie.backdrop_path})`}">
                     <img v-if="movie.poster_path" :src="`${TMDB_IMAGE_URL_500}${movie.poster_path}`" :alt="movie.title">
                 </div>
 
@@ -12,7 +13,7 @@
 
                         <div>
                             <p>{{ movie.overview }}</p>
-                            <a href="#">Ver Mais...</a>
+                            <a :href="`https://www.themoviedb.org/movie/${movie.id}`" target="_blank">Ver Mais...</a>
                         </div>
                     </div>
 
@@ -250,5 +251,82 @@
     .background_bow > img {
         width: 100vw;
         height: 60px;
+    }
+
+    @media (max-width: 992px) {
+        .releases_container {
+            padding: 80px 0px;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+
+        .movie_card {
+            width: 330px;
+            height: 500px;
+            
+            flex-direction: column;
+
+            border-radius: 10px;
+        }
+
+        .card_image {
+            width: 100%;
+            height: 200px;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card_image > img {
+            display: none;
+        }
+
+        .movie_content {
+            margin-bottom: 10px;
+        }
+
+        .movie_content > h3 {
+            font-size: 27px;
+            letter-spacing: 1.5px;
+        }
+
+        .movie_content > div {
+            height: 150px;
+        }
+
+        .movie_content > div p {
+            height: 118px;
+ 
+            font-size: 16px;
+        }
+
+        .movie_content > div > a {
+            font-size: 14px;
+
+            left: 2px;
+            bottom: 13px;
+        }
+
+        .movie_meta > ul {
+            height: 30px;
+
+            font-size: 14px;
+            letter-spacing: .5px;
+        }
+
+        .movie_notify {
+            width: 40px;
+            height: 40px;
+        }
+
+        .movie_notify > svg {
+            width: 18px;
+            height: 21px;
+        }
+
+        .background_bow > img {
+            height: 10px;
+        }
     }
 </style>
