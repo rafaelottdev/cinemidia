@@ -334,7 +334,7 @@
         /* alterado */
         .poster_list_wrapp {
             left: 25px;
-            bottom: 150px;
+            bottom: 160px;
         }
         /* --------- */
 
@@ -346,6 +346,19 @@
             border-radius: 10px;
         }
         /* ---------- */
+
+        .controller {
+            width: 50px;
+            height: 50px;
+        }
+
+        .left_controller {
+            margin-right: 5px;
+        }
+
+        .controller > svg {
+            width: 20px;
+        }
 
         /* alterado */
         .slider_controller_container {
