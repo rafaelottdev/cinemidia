@@ -334,7 +334,7 @@
         /* alterado */
         .poster_list_wrapp {
             left: 25px;
-            bottom: 130px;
+            bottom: 150px;
         }
         /* --------- */
 
@@ -349,7 +349,7 @@
 
         /* alterado */
         .slider_controller_container {
-            bottom: 70px;
+            bottom: 85px;
         }
         /* ---------- */
     }
