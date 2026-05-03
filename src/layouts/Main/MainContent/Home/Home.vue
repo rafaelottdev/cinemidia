@@ -94,20 +94,26 @@
         return Math.min(movies.value.length, 8) - 1
     })
 
-    const wPoster = 215 + 20 // tamanho do poster + espaçamento entre cada poster
+    let wposter = 215
+
+    if(window.innerWidth < 992) {
+        wposter = 130
+    }
+
+    const wPosterFull = wposter + 20 // tamanho do poster + espaçamento entre cada poster
     const posterIndex = ref(0)
 
     function leftClick() {
         if (currentIndex.value > 0) {
             currentIndex.value--
-            posterIndex.value -= wPoster
+            posterIndex.value -= wPosterFull
         }
     }
 
     function rightClick() {
         if (currentIndex.value < maxIndex.value) {
             currentIndex.value++
-            posterIndex.value += wPoster
+            posterIndex.value += wPosterFull
         }
     }
 </script>
@@ -297,5 +303,54 @@
     .poster_item.active {
         transform: scale(1.1);
         box-shadow: 0px 0px 1px 1px rgb(255, 255, 255);
+    }
+
+    @media (max-width: 992px) {
+        /* alterado */
+        .movie_info {
+            margin-top: 130px;
+        }
+
+        /* alterado */
+        .movie_info > h1 {
+            margin-left: 15px;
+
+            font-size: 29px;
+        }
+        /* --------- */
+
+        /* alterado */
+        .movie_stats {
+            font-size: 12px;
+        }
+        /* --------- */
+
+        /* alterado */
+        .stats > svg {
+            margin-top: 0px;
+        }
+        /* --------- */
+
+        /* alterado */
+        .poster_list_wrapp {
+            left: 25px;
+            bottom: 85px;
+        }
+        /* --------- */
+
+        /* alterado */
+        .poster_item {
+            width: 130px;
+            height: 170px;
+
+            border-radius: 10px;
+        }
+        /* ---------- */
+
+        /* alterado */
+        .slider_controller_container {
+            bottom: 35px;
+        }
+        /* ---------- */
     }
 </style>

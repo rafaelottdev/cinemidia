@@ -140,7 +140,7 @@
         width: 30px;
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 992px) {
         .header {
             width: 230px;
             height: 100vh;
@@ -196,7 +196,7 @@
             width: 2.25rem;
             height: 0.188rem;
 
-            background-color: red;
+            background-color: white;
         }
 
         .menu_bar:not(:last-child) {
