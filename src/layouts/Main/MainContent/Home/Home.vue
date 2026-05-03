@@ -308,7 +308,7 @@
     @media (max-width: 992px) {
         /* alterado */
         .movie_info {
-            margin-top: 130px;
+            margin-top: 150px;
         }
 
         /* alterado */
@@ -334,7 +334,7 @@
         /* alterado */
         .poster_list_wrapp {
             left: 25px;
-            bottom: 150px;
+            bottom: 130px;
         }
         /* --------- */
 
@@ -349,7 +349,7 @@
 
         /* alterado */
         .slider_controller_container {
-            bottom: 90px;
+            bottom: 70px;
         }
         /* ---------- */
     }
