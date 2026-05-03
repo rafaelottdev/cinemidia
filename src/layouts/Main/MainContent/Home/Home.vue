@@ -1,5 +1,5 @@
 <template>
-   <section class="home_section">
+   <section class="home_section" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
         <div class="cover_list_wrapp">
             <ul class="cover_list" :style="{transform: `translateX(-${currentIndex * 100}vw)`}">
                 <li v-for="movie in movies.slice(0, 8)" :key="movie.id" class="cover_item">
@@ -64,6 +64,9 @@
     const movies = ref([])
     const genres = ref([])
 
+    let touchStartX = 0
+    let touchEndX = 0
+
     async function getPopularMovies() {
         let response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR`)
         let userData = await response.json()
@@ -87,33 +90,58 @@
     onMounted(() => {
         getPopularMovies()
         getGenres()
+
+        window.addEventListener('resize', updateWindowWidth)
     })
+
+    const windowWidth = ref(window.innerWidth)
+
+    function updateWindowWidth() {
+        windowWidth.value = window.innerWidth
+    }
 
     const currentIndex = ref(0)
     const maxIndex = computed(() => {
         return Math.min(movies.value.length, 8) - 1
     })
 
-    let wposter = 215
+    const wPosterFull = computed(() => {
+        return windowWidth.value < 992
+            ? 150
+            : 235
+    })
 
-    if(window.innerWidth < 992) {
-        wposter = 130
-    }
-
-    const wPosterFull = wposter + 20 // tamanho do poster + espaçamento entre cada poster
-    const posterIndex = ref(0)
+    const posterIndex = computed(() => {
+        return currentIndex.value * wPosterFull.value
+    })
 
     function leftClick() {
         if (currentIndex.value > 0) {
             currentIndex.value--
-            posterIndex.value -= wPosterFull
         }
     }
 
     function rightClick() {
         if (currentIndex.value < maxIndex.value) {
             currentIndex.value++
-            posterIndex.value += wPosterFull
+        }
+    }
+
+    function handleTouchStart(e) {
+        touchStartX = e.changedTouches[0].screenX
+    }
+
+    function handleTouchEnd(e) {
+        touchEndX = e.changedTouches[0].screenX
+
+        const diff = touchStartX - touchEndX
+
+        if(diff > 50) {
+            rightClick()
+        }
+
+        if(diff < -50) {
+            leftClick()
         }
     }
 </script>
@@ -122,6 +150,8 @@
     .home_section {
         height: 100vh;
         position: relative;
+
+        user-select: none;
     }
 
     .cover_list_wrapp {
