@@ -66,4 +66,11 @@
         width: 900px;
         height: 500px;
     }
+
+    @media (max-width: 992px) {
+        .trailer_wrapp > iframe {
+            width: 350px;
+            height: 200px;
+        }
+    }
 </style>
