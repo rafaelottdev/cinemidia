@@ -149,7 +149,6 @@
             padding: 0px 0px 0px 0px;
 
             background-color: rgba(0, 0, 0, 0.948);
-            z-index: 1;
         }
 
         .nav_list {
