@@ -6,6 +6,8 @@
 
         <div class="page_list_wrapp">
             <ul class="page_list">
+                <li v-if="!watchlist.length" class="warning">Nenhum Filme ou Série adicionado</li>
+
                 <li v-for="movie in watchlist" :key="movie.id" class="page_item">
                     <button class="page_button" @click="removeMovie(movie.id)">
                         <span>-</span>
@@ -24,4 +26,18 @@
     import "@/styles/page.css"
 </script>
 
-<style scoped></style>
+<style scoped>
+    .warning {
+        margin: 0 auto;
+        color: white;
+        font-family: "inter", sans-serif;
+        font-size: 21px;
+    }
+
+    @media (max-width: 358px) {
+
+        .warning {
+            font-size: 14px;
+        }
+    }
+</style>
