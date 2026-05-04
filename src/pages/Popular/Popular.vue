@@ -252,4 +252,79 @@
         width: 100%;
         height: 100%;
     }
+
+    @media (max-width: 992px) {
+        .popular_section {
+            min-height: calc(100vh - 30px);
+            padding: 84px 0px 50px 0px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .movie_container {
+            width: 350px;
+            height: 700px;
+
+            margin: 0px auto;
+
+            border-radius: 20px;
+        }
+
+        .left_controller {
+            top: 66%;
+        }
+
+        .right_controller {
+            top: 66%;
+        }
+
+        .controller {
+            width: 55px;
+            height: 55px;
+        }
+
+        .controller > svg {
+            width: 20px;
+        }
+
+        .movie_info {
+            width: 100%;
+
+            margin: 30px 0px 0px 0px;
+            padding: 0px 15px;
+        }
+
+        .movie_info > h3 {
+            text-align: center;
+
+            font-size: 1.8em;
+            letter-spacing: 2px;
+        }
+
+        .movie_stats > p {
+            margin-bottom: 30px;
+            text-align: center;
+
+            font-size: 16px;
+            line-height: 1.5rem;
+        }
+
+        .genres_list {
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .genres_list > li {
+            font-size: 13px;
+        }
+
+        .movie_poster {
+            width: 150px;
+            height: 190px;
+
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 </style>
