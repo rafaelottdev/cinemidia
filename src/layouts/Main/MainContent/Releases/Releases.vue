@@ -43,7 +43,7 @@
 <script setup>
     import { API_KEY, BASE_URL, TMDB_IMAGE_URL, TMDB_IMAGE_URL_500 } from "@/config/tmdb"
     import { ref, onMounted } from "vue";
-    import arco from "/public/arco.png"
+    import arco from "/arco.png"
 
     const upComingMovies = ref([])
     const genres = ref([])

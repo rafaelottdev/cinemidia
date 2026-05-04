@@ -7,20 +7,20 @@
 
 @font-face {
     font-family: 'poppins';
-    src: url('/public/fonts/poppins/Poppins-Regular.ttf');
+    src: url('/fonts/poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
     font-family: 'bebas';
-    src: url('/public/fonts/bebas_neue/BebasNeue-Regular.ttf');
+    src: url('/fonts/bebas_neue/BebasNeue-Regular.ttf');
 }
 
 @font-face {
     font-family: 'inter';
-    src: url('/public/fonts/inter/Inter-Regular.otf');
+    src: url('/fonts/inter/Inter-Regular.otf');
 }
 
 @font-face {
     font-family: 'oswald';
-    src: url('/public/fonts/oswald/Oswald-Medium.ttf');
+    src: url('/fonts/oswald/Oswald-Medium.ttf');
 }
