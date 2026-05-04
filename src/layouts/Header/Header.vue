@@ -6,7 +6,6 @@
             <div class="menu_bar"></div>
         </button>
 
-
         <nav class="main_nav">
             <ul class="nav_list">
                 <li class="nav_item">
