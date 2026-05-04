@@ -1,5 +1,5 @@
 <template>
-    <section class="popular_section">
+    <section class="popular_section" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
         <div class="movie_container">
             <button class="left_controller controller" @click="leftClick">
                 <svg viewBox="0 0 13 13">
@@ -51,6 +51,9 @@
     const movies = ref([])
     const genres = ref([])
 
+    let touchStartX = 0
+    let touchEndX = 0
+
     async function getPopularMovies() {
         let response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR`)
         let userData = await response.json()
@@ -86,6 +89,24 @@
     function rightClick() {
         if(currentIndex.value < maxIndex.value) {
             currentIndex.value++
+        }
+    }
+
+    function handleTouchStart(e) {
+        touchStartX = e.changedTouches[0].screenX
+    }
+
+    function handleTouchEnd(e) {
+        touchEndX = e.changedTouches[0].screenX
+
+        const diff = touchStartX - touchEndX
+
+        if(diff > 50) {
+            rightClick()
+        }
+
+        if(diff < -50) {
+            leftClick()
         }
     }
 
