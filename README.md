@@ -211,7 +211,3 @@ Rafael Ott.
 Este projeto é destinado para fins educacionais e de portfólio.
 
 TMDB API utilizada conforme os termos da plataforma.
-
-
-
-
