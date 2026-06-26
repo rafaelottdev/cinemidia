@@ -119,7 +119,7 @@
 <style scoped>
     .popular_section {
         padding: 84px 0px 50px 0px;
-        background-color: #281f1f;
+        background-color: #0F0F0F;
     }
 
     .movie_container {
